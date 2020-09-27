@@ -4,10 +4,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        
+      #register {
+         display: flex;
+         flex-flow: row nowrap;
+         justify-content: center;
+         align-items: center;
+        }
     </style>
 </head>
 <body>
+    <div name="register">
     <h1>Register</h1>
     <form method="post">
         <label for="username">username: </label>
@@ -16,5 +22,6 @@
         <input type="password" name="password" id="password" required>
         <input type="submit" name="submit" value="submit">
     </form>
+    </div>
 </body>
 </html>
