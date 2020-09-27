@@ -29,9 +29,11 @@
           color: white;
       }
         
-      .inputBoxes {
-         width: 40%;
-         height: 20%;  
+      input[type=text] {
+          width: 100%;
+          padding: 12px;
+          margin: 8px 0;
+          box-sizing: border-box;
       }
         
     </style>
@@ -39,9 +41,9 @@
 <body>
     <div class="register">
     <h1>REGISTER</h1>
-    <form class="inputBoxes" method="post">
+    <form method="post">
         <label for="username">Username: </label>
-        <input class="inputBoxes" type="text" name="username" id="username" required>
+        <input type="text" name="username" id="username" required>
         <div>
         <br>
         <label for="password">Password: </label>
