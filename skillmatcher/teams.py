@@ -42,7 +42,6 @@ def create():
             teamkey = teamname + str(random.randrange(1000))
             leader_id = g.user['id']
             members = g.user['username'] + "," + members
-            emails = g.user['email'] + "," + emails
             db.execute(
                 'INSERT INTO team (teamkey, teamname, leader_id, members, memberemails, skillreqs) VALUES (?, ?, ?, ?, ?, ?)',
                 (teamkey, teamname, leader_id, members, emails, skillreqs)
@@ -88,8 +87,9 @@ def view(teamname):
         members = team['members']
         emails = team['memberemails']
         skills = team['skillreqs']
+        joinlink = url_for("teams.join", teamname=teamname, _external=True)
     
-    return render_template('teams/view.html', teamname=teamname, members=members, emails=emails, skills=skills)
+    return render_template('teams/view.html', teamname=teamname, members=members, emails=emails, skills=skills, joinlink=joinlink)
 
 
 @bp.route("/join/<teamname>", methods=('GET', 'POST'))
