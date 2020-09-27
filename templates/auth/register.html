@@ -6,6 +6,12 @@
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500&display=swap" rel="stylesheet">
     <title>Document</title>
     <style>
+        
+        .parentContainer {
+          display: flex;
+          justify-content: center;
+        }
+        
       .register {
          font-family: 'Work Sans', sans-serif;
          display: flex;
@@ -38,18 +44,20 @@
     </style>
 </head>
 <body>
-    <div class="register">
-    <h1>REGISTER</h1>
-    <form method="post">
-        <label for="username">Username: </label>
-        <input type="text" name="username" id="username" required>
-        <div>
-        <br>
-        <label for="password">Password: </label>
-        <input type="password" name="password" id="password" required>
-        <input type="submit" name="submit" value="submit" class="submit">
+    <div class="parentContainer">
+        <div class="register">
+        <h1>REGISTER</h1>
+            <form method="post">
+                <label for="username">Username: </label>
+                <input type="text" name="username" id="username" required>
+                <div>
+                <br>
+                <label for="password">Password: </label>
+                <input type="password" name="password" id="password" required>
+                <input type="submit" name="submit" value="submit" class="submit">
+                </div>
+            </form>
         </div>
-    </form>
     </div>
 </body>
 </html>
