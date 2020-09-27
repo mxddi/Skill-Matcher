@@ -9,7 +9,7 @@
       .register {
          font-family: 'Work Sans', sans-serif;
          display: flex;
-         flex-flow: row nowrap;
+         flex-flow: column nowrap;
          justify-content: center;
          align-items: center;
          
@@ -29,9 +29,11 @@
     <form method="post">
         <label for="username">Username: </label>
         <input type="text" name="username" id="username" required>
+        <div>
         <label for="password">Password: </label>
         <input type="password" name="password" id="password" required>
         <input type="submit" name="submit" value="submit" class="submit">
+        </div>
     </form>
     </div>
 </body>
