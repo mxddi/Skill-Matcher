@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team List</title>
+</head>
+<body>
+    <h1>Your teams:</h1>
+    <ol>
+        {% for teamname in teamnames %}
+            <li><a href="{{ teamname }}">{{ teamname }}</a></li>
+        {% endfor %}
+    </ol>
+    <form method="post">
+        <input type="submit" value="New Team">
+    </form>
+</body>
+</html>

@@ -33,4 +33,7 @@ def create_app(test_config=None):
     from . import auth
     app.register_blueprint(auth.bp)
 
+    from . import teams
+    app.register_blueprint(teams.bp)
+
     return app
