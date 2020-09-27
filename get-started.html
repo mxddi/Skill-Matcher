@@ -70,7 +70,17 @@
     justify-content: center;
     align-items: center;
    }
-      
+    
+    .signup {
+    border-radius: 6px;
+    background-color: white;
+    }
+    
+    .fname {
+     font-family: 'Work Sans', sans-serif;
+     font-size: 15px;
+    }
+    
    </style>
  </head>
  <body style="background-color:#3a3c3d">
@@ -80,13 +90,16 @@
   </div>
   <div class="flex-container1">
   <br><br><br><br><br><br><br><br><br><br><br><br>
-  <h1>SKILL MATCHER</h1>
-   <div class="topnav" align="center"> <!-- Navigation bar -->
-    <div class="button"><!--<p id="navi"><a href="index.html">GET STARTED</a><a href="how-it-works.html">HOW IT WORKS</a>-->
-     <button class="start"><a href="get-started.html">LET'S GET STARTED!</a></button>
-    </div>
+  <div class="signup">
+    <form class="userName">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname">
+    </form>
   </div>
   </div>
  </body>
 </html>
+
 
