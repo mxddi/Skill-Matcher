@@ -3,26 +3,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Team</title>
+    
+    <style>
+        .parentContainer {
+          display: flex;
+          justify-content: center;
+          margin-top: 180px;
+        }
+        
+      .register {
+         font-family: 'Work Sans', sans-serif;
+         background-color: #C4C4C4;
+         display: flex;
+         flex-flow: column nowrap;
+         justify-content: center;
+         align-items: center;
+         border-radius: 13px;
+         width: 50%;
+         padding-top: 30px;
+         padding-bottom: 30px;
+        }
+        
+      .submit {
+          border-radius: 10px;
+          font-family: 'Work Sans', sans-serif;
+          border: 0px;
+          padding: 10px;
+          background-color: #BE44FF;
+          color: white;
+      }
+        
+      input {
+          width: 100%;
+          padding: 12px;
+          margin: 8px 0;
+          box-sizing: border-box;
+          border-radius: 4px;
+      }
+    
+      p {
+          font-family: 'Work Sans', sans-serif;            
+    }
+   
+    </style>
 </head>
 <body>
-    <h1>Team Info:</h1>
-    <form method="POST">
-        <label for="teamname">Your team name: </label>
-        <input type="text" name="teamname" id="teamname" value="{{ teamname }}" required>
-        <div id="teamMembers">
-            <label for="members">Your group members (separated by commas): (usernames, separated by commas)</label>
-            <input type="text" name="members" id="members" value="{{ members }}">
+    <div class="parentContainer">
+        <div class="register">
+        <h1>Team Info:</h1>
+        <form method="POST">
+            <label for="teamname">Your team name: </label>
+            <input type="text" name="teamname" id="teamname" value="{{ teamname }}" required>
+            <div id="teamMembers">
+                <label for="members">Your group members (separated by commas): (usernames, separated by commas)</label>
+                <input type="text" name="members" id="members" value="{{ members }}">
+            </div>
+            <div id="memberEmail">
+                <label for="emails">Emails of your group members: (separated by commas)</label>
+                <input type="text" name="emails" id="emails" value="{{ emails }}">
+            </div>
+            <div>
+                <label for="skills">Skills you want members to have: (skills, separated by commas)</label>
+                <input type="text" name="skills" id="skills" value="{{ skills }}">
+            </div>
+            <input type="submit" name="submit" value="Update" class="submit">
+        </form>
+        <p>Invite others to Join! Send this link: {{ joinlink }}</p>
         </div>
-        <div id="memberEmail">
-            <label for="emails">Emails of your group members: (separated by commas)</label>
-            <input type="text" name="emails" id="emails" value="{{ emails }}">
-        </div>
-        <div>
-            <label for="skills">Skills you want members to have: (skills, separated by commas)</label>
-            <input type="text" name="skills" id="skills" value="{{ skills }}">
-        </div>
-        <input type="submit" name="submit" value="Update">
-    </form>
-    <p>Invite others to Join! Send this link: {{ joinlink }}</p>
+    </div>
 </body>
 </html>
