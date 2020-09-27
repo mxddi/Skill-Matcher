@@ -3,20 +3,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join Team</title>
+
+<style>
+        .parentContainer {
+          display: flex;
+          justify-content: center;
+          margin-top: 180px;
+        }
+        
+      .register {
+         font-family: 'Work Sans', sans-serif;
+         background-color: #C4C4C4;
+         display: flex;
+         flex-flow: column nowrap;
+         justify-content: center;
+         align-items: center;
+         border-radius: 13px;
+         width: 50%;
+         padding-top: 30px;
+         padding-bottom: 30px;
+        }
+        
+      .submit {
+          border-radius: 10px;
+          font-family: 'Work Sans', sans-serif;
+          border: 0px;
+          padding: 10px;
+          background-color: #BE44FF;
+          color: white;
+      }
+        
+      input {
+          width: 100%;
+          padding: 12px;
+          margin: 8px 0;
+          box-sizing: border-box;
+          border-radius: 4px;
+      }
+    
+      p {
+          font-family: 'Work Sans', sans-serif;        
+          
+    }
+        
 </head>
 <body>
-    <h1>Team Info:</h1>
-    <p>
-        Team Name: {{ teamname }}<br>
-        Team Members: {{ members }}<br>
-        Skills Needed: {{ skillreqs }}<br>
-    </p>
-    {% if canjoin %}
-    <form method="POST">
-        <label for="email">What is the best email for the team leader to reach you?</label>
-        <input type="text" name="email" id="email" required>
-        <input type="submit" name="submit" id="submit" value="Join Team">
-    </form>
-    {% endif %}
+    <div class="parentContainer">
+        <div class="register">
+            <h1>Team Info:</h1>
+            <p>
+                Team Name: {{ teamname }}<br>
+                Team Members: {{ members }}<br>
+                Skills Needed: {{ skillreqs }}<br>
+            </p>
+            {% if canjoin %}
+            <form method="POST">
+                <label for="email">What is the best email for the team leader to reach you?</label>
+                <input type="text" name="email" id="email" required>
+                <input type="submit" name="submit" id="submit" value="Join Team">
+            </form>
+        {% endif %}
+       </div>
+   </div>
 </body>
 </html>
