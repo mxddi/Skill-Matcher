@@ -6,8 +6,14 @@
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500&display=swap" rel="stylesheet">
     <title>Document</title>
     <style>
+        
+        .parentContainer {
+          display: flex;
+          justify-content: center;
+          margin-top: 180px;
+        }
+        
       .register {
-         align: center; 
          font-family: 'Work Sans', sans-serif;
          display: flex;
          flex-flow: column nowrap;
@@ -29,26 +35,28 @@
           color: white;
       }
         
-      .inputBoxes {
-         width: 40%;
-         height: 20%;  
+      input[type=text] {
+          width: 100%;
+          padding: 12px;
+          margin: 8px 0;
+          box-sizing: border-box;
       }
         
     </style>
 </head>
 <body>
-    <div class="register">
-    <h1>REGISTER</h1>
-    <form class="inputBoxes" method="post">
-        <label for="username">Username: </label>
-        <input class="inputBoxes" type="text" name="username" id="username" required>
-        <div>
-        <br>
-        <label for="password">Password: </label>
-        <input type="password" name="password" id="password" required>
-        <input type="submit" name="submit" value="submit" class="submit">
+    <div class="parentContainer">
+        <div class="register">
+        <h1>REGISTER</h1>
+            <form method="post">
+                <label for="username">Username: </label>
+                <input type="text" name="username" id="username" required>
+                <br>
+                <label for="password">Password: </label>
+                <input type="password" name="password" id="password" required>
+                <input type="submit" name="submit" value="submit" class="submit">
+            </form>
         </div>
-    </form>
     </div>
 </body>
 </html>
