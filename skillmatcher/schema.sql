@@ -3,8 +3,6 @@ DROP TABLE IF EXISTS team;
 
 CREATE TABLE user (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    email TEXT NOT NULL,
-    teamkeys TEXT,
     username TEXT UNIQUE NOT NULL,
     password TEXT NOT NULL
 );

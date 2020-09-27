@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Team</title>
+</head>
+<body>
+    <h1>Team Info:</h1>
+    <p>
+        Team Name: {{ teamname }}<br>
+        Team Members: {{ members }}<br>
+        Skills Needed: {{ skillreqs }}<br>
+    </p>
+    {% if canjoin %}
+    <form method="POST">
+        <label for="email">What is the best email for the team leader to reach you?</label>
+        <input type="text" name="email" id="email" required>
+        <input type="submit" name="submit" id="submit" value="Join Team">
+    </form>
+    {% endif %}
+</body>
+</html>

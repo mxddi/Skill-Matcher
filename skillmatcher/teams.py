@@ -56,12 +56,12 @@ def create():
 @bp.route("/view/<teamname>", methods=('GET', 'POST'))
 @login_required
 def view(teamname):
+    db = get_db()
     if request.method == "POST":
         newteamname = request.form['teamname']
         members = request.form['members']
         emails = request.form['emails']
         skillreqs = request.form['skills']
-        db = get_db()
         error = None
 
         if not newteamname:
@@ -76,17 +76,55 @@ def view(teamname):
             return redirect(url_for('teams.index'))
         flash(error)
 
-    db = get_db()
     team = db.execute(
         'SELECT * FROM team t WHERE t.leader_id = ? AND t.teamname = ?',
         (g.user['id'], teamname)
     ).fetchone()
 
-    teamname, members, skills = "", "", ""
+    teamname, members, emails, skills = "", "", "", ""
+
+    if team:
+        teamname = team['teamname']
+        members = team['members']
+        emails = team['memberemails']
+        skills = team['skillreqs']
+    
+    return render_template('teams/view.html', teamname=teamname, members=members, emails=emails, skills=skills)
+
+
+@bp.route("/join/<teamname>", methods=('GET', 'POST'))
+@login_required
+def join(teamname):
+    db = get_db()
+    team = db.execute(
+        'SELECT * FROM team WHERE teamname = ?',
+        (teamname,)
+    ).fetchone()
+
+    if request.method == 'POST':
+        username = g.user['username']
+        email = request.form['email']
+        error = None
+
+        if not email:
+            error = "Email is required."
+        else:
+            members = team['members'] + "," + username
+            emails = team['memberemails'] + "," + email
+            db.execute(
+                'UPDATE team SET members = ?, memberemails = ? WHERE teamkey = ?',
+                (members, emails, team['teamkey'])
+            )
+            db.commit()
+            return redirect(url_for('teams.index'))
+        flash(error)
+
+    teamname, members, skills, canjoin = "", "", "", False
 
     if team:
         teamname = team['teamname']
         members = team['members']
         skills = team['skillreqs']
-    
-    return render_template('teams/view.html', teamname=teamname, members=members, skills=skills)
+        canjoin = team['leader_id'] != g.user['id']
+
+    return render_template("teams/join.html", teamname=teamname, members=members, skills=skills, canjoin=canjoin)
