@@ -3,14 +3,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team List</title>
+ <style>
+        
+        .parentContainer {
+          display: flex;
+          justify-content: center;
+          margin-top: 180px;
+        }
+        
+      .register {
+         font-family: 'Work Sans', sans-serif;
+         background-color: #C4C4C4;
+         display: flex;
+         flex-flow: column nowrap;
+         justify-content: center;
+         align-items: center;
+         border-radius: 13px;
+         width: 50%;
+         padding-top: 30px;
+         padding-bottom: 30px;
+        }
+        
+      .submit {
+          border-radius: 10px;
+          font-family: 'Work Sans', sans-serif;
+          border: 0px;
+          padding: 6px;
+          background-color: #BE44FF;
+          color: white;
+      }
+        
+      input {
+          width: 100%;
+          padding: 12px;
+          margin: 8px 0;
+          box-sizing: border-box;
+          border-radius: 4px;
+      }
+        
+</style>
 </head>
 <body>
-    <h1>Your teams:</h1>
-    <ol>
-        {% for teamname in teamnames %}
-            <li><a href="{{ 'view/' + teamname }}">{{ teamname }}</a></li>
-        {% endfor %}
-    </ol>
-    <button onclick="location.href = 'create';">New Team</button>
+    <div class="parentContainer">
+        <div class="register">
+            <h1>Your teams:</h1>
+                <ol>
+                    {% for teamname in teamnames %}
+                        <li><a href="{{ 'view/' + teamname }}">{{ teamname }}</a></li>
+                    {% endfor %}
+                </ol>
+            <button onclick="location.href = 'create';">New Team</button>
+        </div>
+    </div>
 </body>
 </html>
