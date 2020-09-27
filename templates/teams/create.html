@@ -10,8 +10,12 @@
         <label for="teamname">Your team name: </label>
         <input type="text" name="teamname" id="teamname" required>
         <div id="teamMembers">
-            <label for="members">Members you want to add: (usernames, separated by commas)</label>
+            <label for="members">Members you want to add (separated by commas): (usernames, separated by commas)</label>
             <input type="text" name="members" id="members">
+        </div>
+        <div id="memberEmail">
+            <label for="emails">Emails of your group members (separated by commas): (usernames, separated by commas)</label>
+            <input type="text" name="emails" id="emails" value="{{ emails }}">
         </div>
         <div>
             <label for="skills">Skills you want members to have: (skills, separated by commas)</label>
