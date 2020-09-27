@@ -1,27 +1,73 @@
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <style>
+        
+        .parentContainer {
+          display: flex;
+          justify-content: center;
+          margin-top: 180px;
+        }
+        
+      .register {
+         font-family: 'Work Sans', sans-serif;
+         background-color: #C4C4C4;
+         display: flex;
+         flex-flow: column nowrap;
+         justify-content: center;
+         align-items: center;
+         border-radius: 13px;
+         width: 50%;
+         padding-top: 30px;
+         padding-bottom: 30px;
+        }
+        
+      .submit {
+          border-radius: 10px;
+          font-family: 'Work Sans', sans-serif;
+          border: 0px;
+          padding: 10px;
+          background-color: #BE44FF;
+          color: white;
+      }
+        
+      input {
+          width: 100%;
+          padding: 12px;
+          margin: 8px 0;
+          box-sizing: border-box;
+          border-radius: 4px;
+      }
+        
+</style>
 </head>
 <body>
-    <h1>Create New Team</h1>
-    <form method="POST">
-        <label for="teamname">Your team name: </label>
-        <input type="text" name="teamname" id="teamname" required>
-        <div id="teamMembers">
-            <label for="members">Members you want to add (separated by commas): (usernames, separated by commas)</label>
-            <input type="text" name="members" id="members">
-        </div>
-        <div id="memberEmail">
-            <label for="emails">Emails of your group members (separated by commas): (usernames, separated by commas)</label>
-            <input type="text" name="emails" id="emails" value="{{ emails }}">
-        </div>
-        <div>
-            <label for="skills">Skills you want members to have: (skills, separated by commas)</label>
-            <input type="text" name="skills" id="skills">
-        </div>
-        <input type="submit" name="submit" value="Create">
-    </form>
+    
+    <div class="parentContainer>
+        <div class="register">
+            <h1>Create New Team</h1>
+            <form method="POST">
+                <label for="teamname">Your team name: </label>
+                <input type="text" name="teamname" id="teamname" required>
+                <div id="teamMembers">
+                    <label for="members">Members you want to add (separated by commas): (usernames, separated by commas)</label>
+                    <input type="text" name="members" id="members">
+                </div>
+                <div id="memberEmail">
+                    <label for="emails">Emails of your group members (separated by commas): (usernames, separated by commas)</label>
+                    <input type="text" name="emails" id="emails" value="{{ emails }}">
+                </div>
+                <div>
+                    <label for="skills">Skills you want members to have: (skills, separated by commas)</label>
+                    <input type="text" name="skills" id="skills">
+                </div>
+                <input type="submit" name="submit" value="Create" class="submit">
+            </form>
+       </div>                                                      
+   </div>                                                     
 </body>
 </html>
